@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import './reset.css';
 import './App.css';
+import GameTab from './GameTab';
+import PlayerTab from './PlayerTab';
+import ScoreTab from './ScoreTab';
+import React, { useState } from 'react';
 
 function App() {
+  const [showGameTab, setShowGameTab] = useState(true);
+  const [showPlayerTab, setShowPlayerTab] = useState(false);
+  const [showScoreTab, setShowScoreTab] = useState(false);
+
+  const handleTabClick = (tab) => {
+    setShowGameTab(tab === 'game');
+    setShowPlayerTab(tab === 'player');
+    setShowScoreTab(tab === 'score');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Testaasdf <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <header>
+      <nav>
+        <ul>
+          <li className={showGameTab && 'active'} onClick={() => handleTabClick('game')}>Game</li>
+          <li className={showPlayerTab && 'active'} onClick={() => handleTabClick('player')}>Players</li>
+          <li className={showScoreTab && 'active'} onClick={() => handleTabClick('score')}>Score</li>
+        </ul>
+      </nav>
+    </header>
+    {showGameTab && <GameTab />}
+    {showPlayerTab && <PlayerTab />}
+    {showScoreTab && <ScoreTab />}
+    </>
   );
 }
 
