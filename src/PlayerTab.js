@@ -59,7 +59,6 @@ function PlayerTab() {
         <PlayerList players={players} deletePlayer={deletePlayer}/>
         </>
     )
-    
 }
 
 export const testPlayers = ['test', 'abc'];

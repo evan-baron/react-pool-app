@@ -1,4 +1,4 @@
-import { Player } from "./Player";
+import { PlayerItem } from "./PlayerItem";
 
 export function PlayerList({ players, deletePlayer }) {
     return (
@@ -6,7 +6,7 @@ export function PlayerList({ players, deletePlayer }) {
             {players.length > 0 ? <h2 className="playersHeader">Players</h2> : null}
             {players.map((player, id) => {
                 return (
-                    <Player {...player} key={player.id} deletePlayer={deletePlayer}/>
+                    <PlayerItem {...player} key={player.id} deletePlayer={deletePlayer}/>
                 )
             })}
         </ul>
