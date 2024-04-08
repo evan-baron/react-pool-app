@@ -9,13 +9,7 @@ function App() {
   const [showPlayerTab, setShowPlayerTab] = useState(true);
   const [showGameTab, setShowGameTab] = useState(false);
   const [showScoreTab, setShowScoreTab] = useState(false);
-
-  const handleTabClick = (tab) => {
-    setShowGameTab(tab === 'game');
-    setShowPlayerTab(tab === 'player');
-    setShowScoreTab(tab === 'score');
-  }
-
+  
   useEffect(() => {
     const clearLocalStorage = () => {
       localStorage.clear();
@@ -27,6 +21,12 @@ function App() {
       window.removeEventListener('beforeunload', clearLocalStorage);
     };
   }, []);
+  
+  function handleTabClick(tab) {
+    setShowGameTab(tab === 'game');
+    setShowPlayerTab(tab === 'player');
+    setShowScoreTab(tab === 'score');
+  }
 
   return (
     <>
