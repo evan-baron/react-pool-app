@@ -1,43 +1,18 @@
 import { useState } from "react";
 import { v4 as UUID } from 'uuid';
+import { NewPlayerForm } from "./NewPlayerForm";
+import { PlayerList } from "./PlayerList";
 
 function PlayerTab() {
-    const [newPlayer, setNewPlayer] = useState("");
     const [players, setPlayers] = useState([]);
-    
-    function handleSubmit(e) {
-        //this prevents the form from submitting without clicking the add button
-        e.preventDefault()
+    const newPlayerId = UUID();
 
-        //testing name length
-        if (newPlayer.length === 0) {
-            alert("You must enter a name!")
-            return;
-        } else if(newPlayer.length > 12) {
-            alert("Player name must be no longer than 12 characters");
-            return;
-        }
-
-        //testing to see if player name has bad characters
-        const pattern = /^[A-Za-z0-9_.-\s]+$/;
-        if (!pattern.test(newPlayer)) {
-            alert("Name contains invalid characters! Please only use letters, numbers, spaces, periods, or underscores.");
-            return;
-        }
-
-        //testing to see if preexisting player name already
-        if (players.some(player => player.name === newPlayer)) {
-            alert("This name is already taken. Please choose another one.");
-            return;
-        }
-        
-        const newPlayerId = UUID();
-
+    function addPlayer(player) {
         setPlayers(currentPlayers => {
             return [
                 ...currentPlayers,
                 {
-                    name: newPlayer,
+                    name: player,
                     id: newPlayerId,
                     '8-ball': 0,
                     '9-ball': 0,
@@ -51,7 +26,7 @@ function PlayerTab() {
 
         playersData.push(
             {
-                name: newPlayer,
+                name: player,
                 id: newPlayerId,
                 '8-ball': 0,
                 '9-ball': 0,
@@ -61,8 +36,6 @@ function PlayerTab() {
                 'Total': 0
             }
         )
-
-        setNewPlayer("");
     }
 
     function deletePlayer(playerName) {
@@ -82,32 +55,8 @@ function PlayerTab() {
     
     return (
         <>
-        <form className="addPlayerCard" onSubmit={handleSubmit}>
-            <div className="playerInputCard">
-                <label className="playersHeader">New Player</label>
-                <input 
-                    className="playerInput" 
-                    placeholder="Player Name" 
-                    type="text" 
-                    value={newPlayer} 
-                    onChange={e => setNewPlayer(e.target.value)}
-                    />
-                <button className="btn addPlayer">Add</button>
-            </div>
-        </form>
-        <ul className="playersList">
-            {players.length > 0 ? <h2 className="playersHeader">Players</h2> : null}
-            {players.map((player, id) => {
-                return (
-                    <li key={id} className="playerRow">
-                        <label>
-                            {player.name}
-                        </label>
-                        <button className="btn delete" onClick={() => deletePlayer(player.name)}>Remove</button>
-                    </li>
-                )
-            })}
-        </ul>
+        <NewPlayerForm onSubmit={addPlayer} />
+        <PlayerList players={players} deletePlayer={deletePlayer}/>
         </>
     )
     
