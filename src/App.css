@@ -79,7 +79,7 @@ header li {
 }
 
 .active {
-  background-color: rgba(120, 120, 120, 1);
+  background-color: rgba(120, 120, 120, 1) !important;
 }
 
 .addPlayerCard {

@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as UUID } from 'uuid';
 import { NewPlayerForm } from "./NewPlayerForm";
 import { PlayerList } from "./PlayerList";
+export const testPlayers = ['test', 'abc'];
+export let playersData = [];
 
-function PlayerTab() {
-    const [players, setPlayers] = useState([]);
+export function PlayerTab() {
+    const [players, setPlayers] = useState(() => {
+        const localValue = localStorage.getItem('savedPlayers')
+        if (localValue == null) {
+            return []
+        }
+        return JSON.parse(localValue)
+    })
+
     const newPlayerId = UUID();
+
+    useEffect(() => {
+        localStorage.setItem('savedPlayers', JSON.stringify(players))
+    }, [players]);
 
     function addPlayer(player) {
         setPlayers(currentPlayers => {
@@ -60,7 +73,3 @@ function PlayerTab() {
         </>
     )
 }
-
-export const testPlayers = ['test', 'abc'];
-export let playersData = [];
-export default PlayerTab;

@@ -1,9 +1,9 @@
 import './reset.css';
 import './App.css';
-import PlayerTab from './PlayerTab';
-import GameTab from './GameTab';
-import ScoreTab from './ScoreTab';
-import React, { useState } from 'react';
+import { PlayerTab } from './PlayerTab';
+import { GameTab } from './GameTab';
+import { ScoreTab } from './ScoreTab';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   const [showPlayerTab, setShowPlayerTab] = useState(true);
@@ -15,6 +15,18 @@ function App() {
     setShowPlayerTab(tab === 'player');
     setShowScoreTab(tab === 'score');
   }
+
+  useEffect(() => {
+    const clearLocalStorage = () => {
+      localStorage.clear();
+    };
+
+    window.addEventListener('beforeunload', clearLocalStorage);
+
+    return () => {
+      window.removeEventListener('beforeunload', clearLocalStorage);
+    };
+  }, []);
 
   return (
     <>

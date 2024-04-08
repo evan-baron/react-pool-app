@@ -1,16 +1,27 @@
 import { games } from './Games';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function GameTab() {
-    const [activeGame, setActiveGame] = useState(null); // Track the index of the currently visible rules
+export function GameTab() {
+    const [activeGame, setActiveGame] = useState(() => {
+        return JSON.parse(localStorage.getItem('selectedGame')) || null;
+    }); // Track the index of the currently visible rules
+
+    useEffect(() => {
+        const savedGame = JSON.parse(localStorage.getItem('selectedGame'));
+        if (savedGame !== activeGame) {
+            setActiveGame(savedGame);
+        }
+    }, [activeGame]);
 
     const toggleActive = (game) => {
         // If the clicked index is already visible, hide it
-        if (activeGame === game) {
+        if (activeGame === game.id) {
             setActiveGame(null);
+            localStorage.removeItem('selectedGame');
         } else {
             // Otherwise, show the rules associated with the clicked index
-            setActiveGame(game);
+            setActiveGame(game.id);
+            localStorage.setItem('selectedGame', JSON.stringify(game.id));
         }
     };
     
@@ -18,9 +29,13 @@ function GameTab() {
         <div className='gametab'>
             <nav>
                 <ul>
-                    {games.map((game, index) =>
+                    {games.map((game) =>
                         <React.Fragment key={game.id}>
-                            <li className={activeGame === game ? 'active' : ''} onClick={() => toggleActive(game)}>{game.name}</li>
+                            <li 
+                                key={game.id} 
+                                className={activeGame === game.id ? 'active' : ''} 
+                                onClick={() => toggleActive(game)}
+                            >{game.name}</li>
                         </React.Fragment>
                     )}
                 </ul>
@@ -28,5 +43,3 @@ function GameTab() {
         </div>
     );
 }
-
-export default GameTab;
