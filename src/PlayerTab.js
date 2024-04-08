@@ -53,18 +53,18 @@ export function PlayerTab() {
 
     function deletePlayer(playerName) {
         setPlayers(currentPlayers => {
-            // Filter the players array to remove the player with the specified name
+            //creates a new array (updatedPlayers) from currentPlayers while deleting the player (playerName)
             const updatedPlayers = currentPlayers.filter(player => player.name !== playerName);
-            // Filter the playersData array to remove the player's data
-            playersData = playersData.filter(data => data.name !== playerName);
+            playersData = playersData.filter(player => player.name !== playerName);
+            //returns (replaces) the new array (updatedPlayers) as the existing array (currentPlayers)
             return updatedPlayers;
         });
     }    
     
-    // console.log('players:');
-    // console.log(players);
-    // console.log('playersData:')
-    // console.log(playersData);
+    console.log('players:');
+    console.log(players);
+    console.log('playersData:')
+    console.log(playersData);
     
     return (
         <>
