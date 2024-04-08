@@ -61,10 +61,10 @@ export function PlayerTab() {
         });
     }    
     
-    console.log('players:');
-    console.log(players);
-    console.log('playersData:')
-    console.log(playersData);
+    // console.log('players:');
+    // console.log(players);
+    // console.log('playersData:')
+    // console.log(playersData);
     
     return (
         <>

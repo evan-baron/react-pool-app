@@ -21,7 +21,7 @@ function App() {
       window.removeEventListener('beforeunload', clearLocalStorage);
     };
   }, []);
-  
+
   function handleTabClick(tab) {
     setShowGameTab(tab === 'game');
     setShowPlayerTab(tab === 'player');
@@ -33,9 +33,9 @@ function App() {
     <header>
       <nav>
         <ul>
-          <li className={showPlayerTab && 'active'} onClick={() => handleTabClick('player')}>Players</li>
-          <li className={showGameTab && 'active'} onClick={() => handleTabClick('game')}>Game</li>
-          <li className={showScoreTab && 'active'} onClick={() => handleTabClick('score')}>Score</li>
+          <li className={showPlayerTab ? 'active' : ''} onClick={() => handleTabClick('player')}>Players</li>
+          <li className={showGameTab ? 'active' : ''} onClick={() => handleTabClick('game')}>Game</li>
+          <li className={showScoreTab ? 'active' : ''} onClick={() => handleTabClick('score')}>Score</li>
         </ul>
       </nav>
     </header>
