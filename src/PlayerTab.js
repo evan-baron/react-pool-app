@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { v4 as UUID } from 'uuid';
 import { NewPlayerForm } from "./NewPlayerForm";
 import { PlayerList } from "./PlayerList";
+export let activeGames = [];
 export let playersData = [];
 
 export function PlayerTab() {
@@ -20,18 +21,17 @@ export function PlayerTab() {
     }, [players]);
 
     function addPlayer(player) {
+        if (players.length > 4) {
+            alert("You cannot have more than 5 players.")
+            return;
+        }
+
         setPlayers(currentPlayers => {
             return [
                 ...currentPlayers,
                 {
                     name: player,
-                    id: newPlayerId,
-                    '8-ball': 0,
-                    '9-ball': 0,
-                    '10-ball': 0,
-                    'Rotation': 0,
-                    'One Pocket': 0,
-                    'Total': 0
+                    id: newPlayerId
                 }
             ]
         })
@@ -55,6 +55,9 @@ export function PlayerTab() {
             //creates a new array (updatedPlayers) from currentPlayers while deleting the player (playerName)
             const updatedPlayers = currentPlayers.filter(player => player.name !== playerName);
             playersData = playersData.filter(player => player.name !== playerName);
+            if (updatedPlayers.length === 0) {
+                activeGames = []
+            }
             //returns (replaces) the new array (updatedPlayers) as the existing array (currentPlayers)
             return updatedPlayers;
         });
@@ -62,8 +65,8 @@ export function PlayerTab() {
     
     return (
         <>
-        <NewPlayerForm onSubmit={addPlayer} />
-        <PlayerList players={players} deletePlayer={deletePlayer}/>
+            <NewPlayerForm onSubmit={addPlayer} />
+            <PlayerList players={players} deletePlayer={deletePlayer}/>
         </>
     )
 }

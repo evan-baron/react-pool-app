@@ -31,7 +31,7 @@ export function ScoreCard({ player }) {
     return (
         <li key={player.id} className="scoreCard">
             <div className="playerName">{player.name}</div>
-            <PlayerScore currentScore={currentScore} reduceScore={reduceScore} increaseScore={increaseScore} />
+            <PlayerScore player={player} currentScore={currentScore} reduceScore={reduceScore} increaseScore={increaseScore} />
         </li>
     )
 }

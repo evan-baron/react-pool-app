@@ -1,4 +1,8 @@
-export function PlayerScore({ currentScore, reduceScore, increaseScore }) {
+import { currentGame } from './GameTab';
+
+export function PlayerScore({ player, currentScore, reduceScore, increaseScore }) {
+    player[currentGame[0].name] = currentScore;
+
     return (
         <div className="scoreBox">
                 <div className="upDown" onClick={reduceScore}>-</div>

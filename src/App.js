@@ -30,18 +30,18 @@ function App() {
 
   return (
     <>
-    <header>
-      <nav>
-        <ul>
-          <li className={showPlayerTab ? 'active' : ''} onClick={() => handleTabClick('player')}>Players</li>
-          <li className={showGameTab ? 'active' : ''} onClick={() => handleTabClick('game')}>Game</li>
-          <li className={showScoreTab ? 'active' : ''} onClick={() => handleTabClick('score')}>Score</li>
-        </ul>
-      </nav>
-    </header>
-    {showPlayerTab && <PlayerTab />}
-    {showGameTab && <GameTab />}
-    {showScoreTab && <ScoreTab />}
+      <header>
+        <nav>
+          <ul>
+            <li className={showPlayerTab ? 'active' : ''} onClick={() => handleTabClick('player')}>Players</li>
+            <li className={showGameTab ? 'active' : ''} onClick={() => handleTabClick('game')}>Game</li>
+            <li className={showScoreTab ? 'active' : ''} onClick={() => {handleTabClick('score')}}>Score</li>
+          </ul>
+        </nav>
+      </header>
+      {showPlayerTab && <PlayerTab />}
+      {showGameTab && <GameTab />}
+      {showScoreTab && <ScoreTab />}
     </>
   );
 }

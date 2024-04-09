@@ -1,6 +1,7 @@
 import { playersData } from './PlayerTab';
 import { ScoreCard } from './ScoreCard';
 import { currentGame } from './GameTab';
+import { activeGames } from './PlayerTab';
 
 export function ScoreTab() {
     return (

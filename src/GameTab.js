@@ -1,7 +1,8 @@
 import { games } from './Games';
 import React, { useState, useEffect } from 'react';
+import { playersData } from './PlayerTab';
+import { activeGames } from './PlayerTab';
 export let currentGame = [];
-let activeGames = [];
 
 export function GameTab() {
     const [activeGame, setActiveGame] = useState(() => {
@@ -21,7 +22,7 @@ export function GameTab() {
             localStorage.setItem('selectedGame', JSON.stringify(game.id));
 
             //puts the clicked games into activeGames array for scorekeeping tab
-            if (!activeGames.includes(game.id)) {
+            if (playersData.length > 0 && !activeGames.includes(game.id)) {
                 activeGames.push(game.id);
             }
             currentGame = [];
