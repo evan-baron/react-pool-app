@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import { playersData } from './PlayerTab';
 import { ScoreCard } from './ScoreCard';
-import { games } from './Games';
-import { activeGames } from './GameTab';
 import { currentGame } from './GameTab';
 
 export function ScoreTab() {
