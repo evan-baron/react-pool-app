@@ -4,10 +4,7 @@ export function PlayerItem({ id, name, deletePlayer }) {
             <label>
                 {name}
             </label>
-            <button 
-                className="btn delete" 
-                onClick={() => deletePlayer(name)}
-            >Remove</button>
+            <button className="btn delete" onClick={() => deletePlayer(name)}>Remove</button>
         </li>
     )
 }

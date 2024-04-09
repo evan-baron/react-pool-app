@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { v4 as UUID } from 'uuid';
 import { NewPlayerForm } from "./NewPlayerForm";
 import { PlayerList } from "./PlayerList";
-export const testPlayers = ['test', 'abc'];
 export let playersData = [];
 
 export function PlayerTab() {
@@ -31,7 +30,7 @@ export function PlayerTab() {
                     '9-ball': 0,
                     '10-ball': 0,
                     'Rotation': 0,
-                    'One-pocket': 0,
+                    'One Pocket': 0,
                     'Total': 0
                 }
             ]
@@ -41,11 +40,11 @@ export function PlayerTab() {
             {
                 name: player,
                 id: newPlayerId,
-                '8-ball': 0,
-                '9-ball': 0,
-                '10-ball': 0,
+                '8-Ball': 0,
+                '9-Ball': 0,
+                '10-Ball': 0,
                 'Rotation': 0,
-                'One-pocket': 0,
+                'One Pocket': 0,
                 'Total': 0
             }
         )
