@@ -6,7 +6,6 @@ import React, { useState, useEffect } from 'react';
 export function ScoreCard({ player }) {
     const gameId = currentGame.length > 0 ? currentGame[0].id : null;
     const playerId = player.id;
-
     const [currentScore, setCurrentScore] = useState(() => {
         const savedScore = localStorage.getItem(`savedScore_${playerId}_${gameId}`);
         if (savedScore == null) {

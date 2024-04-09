@@ -27,11 +27,6 @@ export function GameTab() {
             currentGame = [];
             currentGame.push(game);
         }
-
-        // console.log('activeGames:');
-        // console.log(activeGames);
-        // console.log('currentGame:');
-        // console.log(currentGame);
     };
     
     return (
