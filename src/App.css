@@ -145,6 +145,8 @@ span {
 .scoreTab {
   display: flex;
   flex-direction: column;
+  height: calc(100% - 50px);
+  align-items: center;
   padding: 20px;
 }
 
@@ -189,4 +191,16 @@ span {
 
 .score {
   width: 50px;
+}
+
+.finishGame {
+  display: flex;
+  margin-top: auto;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  border: 2px white solid;
+  border-radius: 5px;
+  font-size: 30px;
+  padding: 2.5px 10px;
 }

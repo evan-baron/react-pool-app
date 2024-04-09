@@ -1,9 +1,16 @@
+import React, { useState } from 'react';
 import { playersData } from './PlayerTab';
 import { ScoreCard } from './ScoreCard';
 import { currentGame } from './GameTab';
-import { activeGames } from './PlayerTab';
+import { TotalScoreTab } from './TotalScoreTab';
 
 export function ScoreTab() {
+    const [totalVisible, setTotalVisible] = useState(false);
+
+    function finishGame() {
+        setTotalVisible(!totalVisible)
+    }
+
     return (
         <div className="scoreTab">
             <h2 className="scoresHeader">{currentGame.length > 0 ? `${currentGame[0].name} Score` : `No Current Game`}</h2>
@@ -11,6 +18,8 @@ export function ScoreTab() {
                     <ScoreCard key={player.id} player={player} playerId={player.id}/>
                 )) : null
             }
+            {totalVisible && <TotalScoreTab />}
+            <div className="finishGame" onClick={finishGame}>Finish</div>
         </div>
     )
 }
