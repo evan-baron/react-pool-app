@@ -1,5 +1,7 @@
 import { games } from './Games';
 import React, { useState, useEffect } from 'react';
+export let currentGame = [];
+let activeGames = [];
 
 export function GameTab() {
     const [activeGame, setActiveGame] = useState(() => {
@@ -13,16 +15,23 @@ export function GameTab() {
         }
     }, [activeGame]);
 
-    const toggleActive = (game) => {
-        // If the clicked index is already visible, hide it
-        if (activeGame === game.id) {
-            setActiveGame(null);
-            localStorage.removeItem('selectedGame');
-        } else {
-            // Otherwise, show the rules associated with the clicked index
+    function toggleActive(game) {
+        if (activeGame !== game.id) {
             setActiveGame(game.id);
             localStorage.setItem('selectedGame', JSON.stringify(game.id));
+
+            //puts the clicked games into activeGames array for scorekeeping tab
+            if (!activeGames.includes(game.id)) {
+                activeGames.push(game.id);
+            }
+            currentGame = [];
+            currentGame.push(game);
         }
+
+        // console.log('activeGames:');
+        // console.log(activeGames);
+        // console.log('currentGame:');
+        // console.log(currentGame);
     };
     
     return (
