@@ -7,7 +7,7 @@ export let currentGame = [];
 export function GameTab() {
     const [activeGame, setActiveGame] = useState(() => {
         return JSON.parse(localStorage.getItem('selectedGame')) || null;
-    }); // Track the index of the currently visible rules
+    });
 
     useEffect(() => {
         const savedGame = JSON.parse(localStorage.getItem('selectedGame'));
@@ -22,8 +22,8 @@ export function GameTab() {
             localStorage.setItem('selectedGame', JSON.stringify(game.id));
 
             //puts the clicked games into activeGames array for scorekeeping tab
-            if (playersData.length > 0 && !activeGames.includes(game.id)) {
-                activeGames.push(game.id);
+            if (playersData.length > 0 && !activeGames.includes(game.name)) {
+                activeGames.push(game.name);
             }
             currentGame = [];
             currentGame.push(game);
@@ -32,6 +32,7 @@ export function GameTab() {
     
     return (
         <div className='gametab'>
+            <div className="gameHeader">Select Game</div>
             <nav>
                 <ul>
                     {games.map((game) =>

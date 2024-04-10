@@ -18,8 +18,8 @@ export function ScoreTab() {
                     <ScoreCard key={player.id} player={player} playerId={player.id}/>
                 )) : null
             }
-            {totalVisible && <TotalScoreTab />}
-            <div className="finishGame" onClick={finishGame}>Finish</div>
+            {totalVisible && <TotalScoreTab finishGame={finishGame} />}
+            {currentGame.length > 0 && playersData.length > 0 ? <div className="finishGame" onClick={finishGame}>Finish</div> : null}
         </div>
     )
 }

@@ -1,5 +1,4 @@
 import { PlayerScore } from './PlayerScore';
-import { playersData } from './PlayerTab';
 import { currentGame } from './GameTab';
 import React, { useState, useEffect } from 'react';
 
@@ -8,8 +7,9 @@ export function ScoreCard({ player }) {
     const playerId = player.id;
     const [currentScore, setCurrentScore] = useState(() => {
         const savedScore = localStorage.getItem(`savedScore_${playerId}_${gameId}`);
+        //makes sure when adding a new player after game has started and scores have been entered that new player begins with 0
         if (savedScore == null) {
-            return playersData[0][currentGame[0].name];
+            return 0;
         }
         return JSON.parse(savedScore)
     });

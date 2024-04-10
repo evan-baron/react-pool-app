@@ -4,6 +4,7 @@ import { PlayerTab } from './PlayerTab';
 import { GameTab } from './GameTab';
 import { ScoreTab } from './ScoreTab';
 import React, { useState, useEffect } from 'react';
+import { playersData } from './PlayerTab';
 
 function App() {
   const [showPlayerTab, setShowPlayerTab] = useState(true);
@@ -23,6 +24,15 @@ function App() {
   }, []);
 
   function handleTabClick(tab) {
+    //both ifs below make it so that you must have a minimum of two players to continue
+    if (tab === 'game' && playersData.length < 2) {
+      return;
+    }
+
+    if (tab === 'score' && playersData.length < 2) {
+      return;
+    }
+
     setShowGameTab(tab === 'game');
     setShowPlayerTab(tab === 'player');
     setShowScoreTab(tab === 'score');
