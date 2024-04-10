@@ -45,7 +45,7 @@ export function PlayerTab() {
                 '10-Ball': 0,
                 'Rotation': 0,
                 'One Pocket': 0,
-                'Total': 0
+                'total': 0
             }
         )
     }

@@ -21,11 +21,13 @@ export function ScoreCard({ player }) {
     function reduceScore() {
         if (currentScore > 0) {
             setCurrentScore(prevScore => prevScore - 1);
+            player.total -= 1;
         }
     }
 
     function increaseScore() {
         setCurrentScore(prevScore => prevScore + 1);
+        player.total += 1;
     }
 
     return (
