@@ -116,6 +116,10 @@ header li {
   border-radius: 5px;
 }
 
+.delete {
+  font-size: 20px !important;
+}
+
 .playerInputCard {
   display: flex;
   flex-direction: column;
@@ -152,6 +156,7 @@ span {
   justify-content: space-between;
   align-items: center;
   max-width: 100dvw;
+  height: 33px;
 }
 
 .playerRow label {
