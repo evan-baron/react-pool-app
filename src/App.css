@@ -108,7 +108,7 @@ header li {
 }
 
 .btn {
-  font-size: 20px;
+  font-size: 30px;
   align-self: center;
   color: rgba(255, 255, 255, .90);
   background-color: rgba(0, 0, 0, 0);
@@ -125,7 +125,7 @@ header li {
 
 .playerInput {
   width: 100%;
-  font-size: 20px;
+  font-size: 30px;
   color: rgb(25, 25, 25);
   border-radius: 5px;
 }
@@ -141,8 +141,9 @@ span {
 .playersList {
   display: flex;
   flex-direction: column;
-  font-size: 20px;
+  font-size: 30px;
   padding: 0px 20px;
+  max-width: 100dvw;
   gap: 10px;
 }
 
@@ -150,6 +151,15 @@ span {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 100dvw;
+}
+
+.playerRow label {
+  display: flex;
+  max-width: 50%;
+  overflow-x: scroll;
+  align-items: center;
+  font-size: 30px;
 }
 
 .scoreTab {
@@ -247,6 +257,12 @@ span {
   gap: 10px;
 }
 
+.noTotal {
+  font-size: 30px;
+  padding-bottom: 10px;
+  text-align:center;
+}
+
 .finalContainer {
   display: flex;
   flex-direction: column;
@@ -266,7 +282,7 @@ span {
 }
 
 .playerFinal {
-  font-size: 20px;
+  font-size: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -275,13 +291,15 @@ span {
 
 .playerTotal {
   display: flex;
-  height: 22px;
+  word-wrap: break-word;
+  flex-flow: row;
+  height: 33px;
 }
 
 .playerGame {
   display: flex;
-  font-size: 18px;
-  height: 20px;
+  font-size: 24px;
+  height: 26px;
 }
 
 .btnBox {

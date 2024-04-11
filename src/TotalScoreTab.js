@@ -53,7 +53,7 @@ export function TotalScoreTab({ finishGame }) {
             <>
                 <div className="shader"></div>
                 <div className="totalContainer">
-                    <h2 className="">There is no score data. You should play some games!</h2>
+                    <h2 className="noTotal">You haven't entered any scores yet!<br></br>You should go play some games!</h2>
                     <div className="btnBox">
                         <div className="backBtn" onClick={goBack}>Back</div>
                     </div>
