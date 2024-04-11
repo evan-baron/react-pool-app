@@ -1,4 +1,4 @@
-export function PlayerItem({ id, name, deletePlayer }) {
+export function PlayerItem({ name, deletePlayer }) {
     return (
         <li className="playerRow">
             <label>
