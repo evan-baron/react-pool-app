@@ -132,6 +132,13 @@ header li {
   font-size: 30px;
   color: rgb(25, 25, 25);
   border-radius: 5px;
+  border: 1px solid rgb(25, 25, 25);
+  outline: none;
+}
+
+.playerInput:focus {
+  box-shadow: inset 0 0 0px 2px black;
+  border: 1px solid rgb(180, 180, 180);
 }
 
 span {
