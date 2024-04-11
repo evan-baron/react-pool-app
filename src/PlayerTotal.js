@@ -1,5 +1,4 @@
 import React from "react";
-import { playersData } from "./PlayerTab";
 
 export function PlayerTotal({ player }) {
 
@@ -14,14 +13,6 @@ export function PlayerTotal({ player }) {
     //         <li className="playerTotal">{player.name}' did not win any games.'</li>
     //     )
     // }
-
-    // let namearr = [];
-    // namearr.push(player.name);
-    // namearr.push(`'s Total: `);
-    // namearr.push(player.total);
-    // console.log(namearr);
-    // let namestring = namearr.join("");
-    // console.log(namestring);
 
     return (
         <li className="playerTotal">{player.name}'s total: {player.total}</li>
