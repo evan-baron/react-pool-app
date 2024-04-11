@@ -21,7 +21,6 @@ export function GameTab() {
             setActiveGame(game.id);
             localStorage.setItem('selectedGame', JSON.stringify(game.id));
 
-            //puts the clicked games into activeGames array for scorekeeping tab
             if (playersData.length > 0 && !activeGames.includes(game.name)) {
                 activeGames.push(game.name);
             }

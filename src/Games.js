@@ -1,27 +1,22 @@
 export const games = [
     {
         id: '8id',
-        name: '8-Ball',
-        rules: '8-ball rules test'
+        name: '8-Ball'
     },
     {
         id: '9id',
-        name: '9-Ball',
-        rules: '9-ball rules test'
+        name: '9-Ball'
     },
     {
         id: '10id',
-        name: '10-Ball',
-        rules: '10-ball rules test'
+        name: '10-Ball'
     },
     {
         id: 'Rid',
-        name: 'Rotation',
-        rules: 'rotation rules test'
+        name: 'Rotation'
     },
     {
         id: 'Oid',
-        name: 'One Pocket',
-        rules: 'one pocket rules test'
+        name: 'One Pocket'
     }
 ]
