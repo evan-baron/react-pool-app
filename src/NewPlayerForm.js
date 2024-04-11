@@ -39,14 +39,16 @@ export function NewPlayerForm({ onSubmit }) {
         <form className="addPlayerCard" onSubmit={handleSubmit}>
             <div className="playerInputCard">
                 <label className="playersHeader">New Player</label>
-                <input 
-                    className="playerInput" 
-                    placeholder="Player Name" 
-                    type="text" 
-                    value={newPlayer} 
-                    onChange={e => setNewPlayer(e.target.value)}
-                    />
-                <button className="btn addPlayer">Add</button>
+                <div className="inputContainer">
+                    <input 
+                        className="playerInput" 
+                        placeholder="Player Name" 
+                        type="text" 
+                        value={newPlayer} 
+                        onChange={e => setNewPlayer(e.target.value)}
+                        />
+                    <button className="btn addPlayer">Add</button>
+                </div>
             </div>
         </form>
     )

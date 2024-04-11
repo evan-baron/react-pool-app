@@ -15,6 +15,6 @@ export function PlayerTotal({ player }) {
     // }
 
     return (
-        <li className="playerTotal">{player.name}'s total: {player.total}</li>
+        <label className="playerTotal">{player.name}'s total: {player.total}</label>
     )
 }

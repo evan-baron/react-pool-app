@@ -30,21 +30,19 @@ export function GameTab() {
     };
     
     return (
-        <div className='gametab'>
+        <div className='gameTab'>
             <div className="gameHeader">Select Game</div>
-            <nav>
-                <ul>
-                    {games.map((game) =>
-                        <React.Fragment key={game.id}>
-                            <li 
-                                key={game.id} 
-                                className={activeGame === game.id ? 'active' : ''} 
-                                onClick={() => toggleActive(game)}
-                            >{game.name}</li>
-                        </React.Fragment>
-                    )}
-                </ul>
-            </nav>
+            <ul>
+                {games.map((game) =>
+                    <React.Fragment key={game.id}>
+                        <li 
+                            key={game.id} 
+                            className={activeGame === game.id ? 'active' : null} 
+                            onClick={() => toggleActive(game)}
+                        >{game.name}</li>
+                    </React.Fragment>
+                )}
+            </ul>
         </div>
     );
 }

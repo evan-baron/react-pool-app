@@ -64,9 +64,9 @@ export function PlayerTab() {
     }    
     
     return (
-        <>
+        <div className="playerTabContainer">
             <NewPlayerForm onSubmit={addPlayer} />
             <PlayerList players={players} deletePlayer={deletePlayer}/>
-        </>
+        </div>
     )
 }

@@ -7,11 +7,13 @@ export function PlayerFinal({ player }) {
     return (
         <div className="playerFinal">
             <PlayerTotal player={player} />
-            {activeScores.map((game) => {
-                return (
-                    <PlayerGame key={`${player.id}_${game}`} player={player} game={game} />
-                )
-            })}
+            <ul>
+                {activeScores.map((game) => {
+                    return (
+                        <PlayerGame key={`${player.id}_${game}`} player={player} game={game} />
+                    )
+                })}
+            </ul>
         </div>
     )
 }

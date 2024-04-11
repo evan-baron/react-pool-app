@@ -14,12 +14,14 @@ export function ScoreTab() {
     return (
         <div className="scoreTab">
             <h2 className="scoresHeader">{currentGame.length > 0 ? `${currentGame[0].name} Score` : `No Current Game`}</h2>
-            {currentGame.length > 0 ? (playersData.map((player) => 
-                    <ScoreCard key={player.id} player={player} playerId={player.id}/>
-                )) : null
-            }
+            <ul className="sCardContainer">
+                {currentGame.length > 0 ? (playersData.map((player) => 
+                        <ScoreCard key={player.id} player={player} playerId={player.id}/>
+                    )) : null
+                }
+            </ul>
             {totalVisible && <TotalScoreTab finishGame={finishGame} />}
-            {currentGame.length > 0 && playersData.length > 0 ? <div className="finishGame" onClick={finishGame}>Finish</div> : null}
+            {currentGame.length > 0 && playersData.length > 0 ? <div className="btn finishGame" onClick={finishGame}>Finish</div> : null}
         </div>
     )
 }

@@ -33,17 +33,19 @@ export function TotalScoreTab({ finishGame }) {
             <>
                 <div className="shader"></div>
                 <div className="totalContainer">
-                    <h2 className="totalHeader">Final Score</h2>
-                    <div className="finalContainer">
-                        {playersData.map((player) => {
-                            return (
-                                <PlayerFinal key={player.id} player={player} />
-                            )
-                        })}
-                    </div>
-                    <div className="btnBox">
-                        <div className="backBtn" onClick={goBack}>Back</div>
-                        <div className="backBtn" onClick={resetGame}>Done</div>
+                    <div className="totalBox">
+                        <h2 className="totalHeader">Final Score</h2>
+                        <div className="finalContainer">
+                            {playersData.map((player) => {
+                                return (
+                                    <PlayerFinal key={player.id} player={player} />
+                                )
+                            })}
+                        </div>
+                        <div className="btnBox">
+                            <div className="btn backBtn" onClick={goBack}>Back</div>
+                            <div className="btn backBtn" onClick={resetGame}>Done</div>
+                        </div>
                     </div>
                 </div>
             </>
@@ -53,9 +55,11 @@ export function TotalScoreTab({ finishGame }) {
             <>
                 <div className="shader"></div>
                 <div className="totalContainer">
-                    <h2 className="noTotal">You haven't entered any scores yet!<br></br>You should go play some games!</h2>
-                    <div className="btnBox">
-                        <div className="backBtn" onClick={goBack}>Back</div>
+                    <div className="totalBox">
+                        <h2 className="noTotal">You haven't entered any scores yet!<br></br>You should go play some games!</h2>
+                        <div className="btnBox">
+                            <div className="btn backBtn" onClick={goBack}>Back</div>
+                        </div>
                     </div>
                 </div>
             </>
