@@ -100,7 +100,7 @@ header li {
 }
 
 .playersHeader {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .addPlayer {
@@ -182,7 +182,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 40px;
   padding-bottom: 5px;
   border-bottom: 2px solid white;
 }
@@ -282,7 +282,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 40px;
   padding-bottom: 5px;
   border-bottom: 2px solid white;
 }
