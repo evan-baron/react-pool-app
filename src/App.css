@@ -84,7 +84,9 @@ header li {
 .playerTabContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
+  height: 100%;
   width: 100%;
   padding: 20px;
 }
@@ -151,6 +153,8 @@ form {
 .playersRule {
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 30px;
   text-align: center;
   border: 2px solid red;
@@ -192,6 +196,8 @@ form {
 }
 
 .playerRow label {
+  display: flex;
+  align-items: center;
   width: 70%;
   font-size: 30px;
   overflow-x: scroll;
@@ -200,6 +206,16 @@ form {
 .playerRow .delete {
   font-size: 20px;
   width: 30%;
+}
+
+.selectGame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 60%;
+  font-size: 30px;
+  margin-top: auto;
 }
 
 /* EVERYTHING GAME TAB RELATED BELOW */

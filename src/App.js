@@ -59,7 +59,7 @@ function App() {
           </ul>
         </nav>
       </header>
-      {showPlayerTab && <PlayerTab gameNavVisible={gameNavVisible} scoreNavVisible={scoreNavVisible} />}
+      {showPlayerTab && <PlayerTab gameNavVisible={gameNavVisible} scoreNavVisible={scoreNavVisible} handleTabClick={handleTabClick}/> }
       {showGameTab && <GameTab scoreNavVisible={scoreNavVisible} handleTabClick={handleTabClick} />}
       {showScoreTab && <ScoreTab />}
     </>

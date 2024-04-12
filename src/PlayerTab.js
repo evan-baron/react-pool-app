@@ -5,7 +5,7 @@ import { PlayerList } from "./PlayerList";
 export let activeGames = [];
 export let playersData = [];
 
-export function PlayerTab({ scoreNavVisible, gameNavVisible }) {
+export function PlayerTab({ scoreNavVisible, gameNavVisible, handleTabClick }) {
     const [players, setPlayers] = useState(() => {
         const localValue = localStorage.getItem('savedPlayers')
         if (localValue == null) {
@@ -82,8 +82,9 @@ export function PlayerTab({ scoreNavVisible, gameNavVisible }) {
     
     return (
         <div className="playerTabContainer">
-            <NewPlayerForm onSubmit={addPlayer} />
+            {players.length < 5 ? <NewPlayerForm onSubmit={addPlayer} /> : null }
             <PlayerList players={players} deletePlayer={deletePlayer}/>
+            {players.length > 1 ? <div className="btn selectGame" onClick={() => {handleTabClick('game')}}>Select Game</div> : null}
         </div>
     )
 }
