@@ -49,11 +49,12 @@ header nav {
 
 header ul {
   display: flex;
-  gap: 2px;
-  justify-content: space-between;
+  /* gap: 2px; */
+  /* justify-content: space-between; */
   width: 100%;
   font-size: 30px;
-  background-color: rgb(125, 125, 125);
+  /* background-color: rgb(125, 125, 125); */
+  background-color: rgb(25, 25, 25);
   border-bottom: 2px solid white;
 }
 
@@ -62,8 +63,16 @@ header li {
   justify-content: center;
   align-items: center;
   height: 50px;
-  width: 33%;
+  width: calc(100%/3);
   background-color: rgb(25, 25, 25);
+}
+
+.gameNav {
+  border-left: 2px solid rgb(125, 125, 125);
+}
+
+.scoreNav {
+  border-left: 2px solid rgb(125, 125, 125);
 }
 
 .active {
@@ -138,6 +147,34 @@ form {
   gap: 10px;
   width: 100%;
 }
+
+.playersRule {
+  position: relative;
+  display: flex;
+  font-size: 30px;
+  text-align: center;
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 10px 10px;
+  /* animation: blink 2s infinite steps(1); */
+}
+
+/* OPTIONAL ANIMATION BELOW */
+
+/* @keyframes blink {
+  0% {
+    border-color: transparent;
+    display: flex;
+  }
+  50% {
+    border-color: red;
+    display: none;
+  }
+  100% {
+    border-color: transparent;
+    display: flex;
+  }
+} */
 
 .pListContainer {
   display: flex;

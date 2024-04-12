@@ -10,6 +10,8 @@ function App() {
   const [showPlayerTab, setShowPlayerTab] = useState(true);
   const [showGameTab, setShowGameTab] = useState(false);
   const [showScoreTab, setShowScoreTab] = useState(false);
+  const [showGameNav, setShowGameNav] = useState(false);
+  const [showScoreNav, setShowScoreNav] = useState(false);
   
   useEffect(() => {
     const clearLocalStorage = () => {
@@ -38,19 +40,27 @@ function App() {
     setShowScoreTab(tab === 'score');
   }
 
+  function gameNavVisible(param) {
+    setShowGameNav(param)
+  }
+
+  function scoreNavVisible(param) {
+    setShowScoreNav(param)
+  }
+
   return (
     <>
       <header>
         <nav>
           <ul>
-            <li className={showPlayerTab ? 'active' : ''} onClick={() => handleTabClick('player')}>Players</li>
-            <li className={showGameTab ? 'active' : ''} onClick={() => handleTabClick('game')}>Game</li>
-            <li className={showScoreTab ? 'active' : ''} onClick={() => {handleTabClick('score')}}>Score</li>
+            <li className={showPlayerTab ? 'playersNav active' : 'playersNav'} onClick={() => handleTabClick('player')}>Players</li>
+            {showGameNav && <li className={showGameTab ? 'gameNav active' : 'gameNav'} onClick={() => handleTabClick('game')}>Game</li>}
+            {showScoreNav && <li className={showScoreTab ? 'scoreNav active' : 'scoreNav'} onClick={() => {handleTabClick('score')}}>Score</li>}
           </ul>
         </nav>
       </header>
-      {showPlayerTab && <PlayerTab />}
-      {showGameTab && <GameTab />}
+      {showPlayerTab && <PlayerTab gameNavVisible={gameNavVisible} scoreNavVisible={scoreNavVisible} />}
+      {showGameTab && <GameTab scoreNavVisible={scoreNavVisible} handleTabClick={handleTabClick} />}
       {showScoreTab && <ScoreTab />}
     </>
   );

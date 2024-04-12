@@ -4,7 +4,7 @@ import { playersData } from './PlayerTab';
 import { activeGames } from './PlayerTab';
 export let currentGame = [];
 
-export function GameTab() {
+export function GameTab({ scoreNavVisible, handleTabClick }) {
     const [activeGame, setActiveGame] = useState(() => {
         return JSON.parse(localStorage.getItem('selectedGame')) || null;
     });
@@ -26,6 +26,8 @@ export function GameTab() {
             }
             currentGame = [];
             currentGame.push(game);
+
+            scoreNavVisible(true)
         }
     };
     
@@ -38,7 +40,11 @@ export function GameTab() {
                         <li 
                             key={game.id} 
                             className={activeGame === game.id ? 'active' : null} 
-                            onClick={() => toggleActive(game)}
+                            onClick={() => {
+                                toggleActive(game)
+                                handleTabClick('score')
+                                }
+                            }
                         >{game.name}</li>
                     </React.Fragment>
                 )}

@@ -5,7 +5,7 @@ import { PlayerList } from "./PlayerList";
 export let activeGames = [];
 export let playersData = [];
 
-export function PlayerTab() {
+export function PlayerTab({ scoreNavVisible, gameNavVisible }) {
     const [players, setPlayers] = useState(() => {
         const localValue = localStorage.getItem('savedPlayers')
         if (localValue == null) {
@@ -48,16 +48,33 @@ export function PlayerTab() {
                 'total': 0
             }
         )
+
+        if (playersData.length >= 2) {
+            gameNavVisible(true)
+        }
+
+        if (playersData.length >= 2 && activeGames.length > 0) {
+            scoreNavVisible(true)
+        }
     }
 
     function deletePlayer(playerName) {
         setPlayers(currentPlayers => {
             //creates a new array (updatedPlayers) from currentPlayers while deleting the player (playerName)
             const updatedPlayers = currentPlayers.filter(player => player.name !== playerName);
+
             playersData = playersData.filter(player => player.name !== playerName);
+
             if (updatedPlayers.length === 0) {
                 activeGames = []
+                localStorage.removeItem('selectedGame')
             }
+            
+            if (playersData.length < 2) {
+                gameNavVisible(false)
+                scoreNavVisible(false)
+            }
+
             //returns (replaces) the new array (updatedPlayers) as the existing array (currentPlayers)
             return updatedPlayers;
         });
