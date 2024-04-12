@@ -195,12 +195,20 @@ form {
   height: 40px;
 }
 
+.playerRow::-webkit-scrollbar {
+  display: none;
+}
+
 .playerRow label {
   display: flex;
   align-items: center;
   width: 70%;
   font-size: 30px;
   overflow-x: scroll;
+}
+
+.playerRow label::-webkit-scrollbar {
+  display: none;
 }
 
 .playerRow .delete {
@@ -294,6 +302,10 @@ form {
   width: 70%;
   font-size: 30px;
   overflow-x: scroll;
+}
+
+.playerName::-webkit-scrollbar {
+  display: none;
 }
 
 .scoreBox {
@@ -398,6 +410,10 @@ form {
   padding-bottom: 1px;
 }
 
+.finalContainer::-webkit-scrollbar {
+  display: none;
+}
+
 .playerFinal {
   display: flex;
   flex-direction: column;
@@ -412,6 +428,10 @@ form {
   overflow-x: auto;
   font-size: 25px;
   padding-bottom: 1px;
+}
+
+.playerTotal::webkit-scrollbar {
+  display: none;
 }
 
 .playerGame {
