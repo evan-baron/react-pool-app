@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-pool-app/static/css/main.d0ce716e.css",
-    "main.js": "/react-pool-app/static/js/main.286bb98d.js",
+    "main.css": "/react-pool-app/static/css/main.e028e16b.css",
+    "main.js": "/react-pool-app/static/js/main.b3c8d42e.js",
     "static/js/592.7a291b6e.chunk.js": "/react-pool-app/static/js/592.7a291b6e.chunk.js",
     "static/media/pool-background.jpg": "/react-pool-app/static/media/pool-background.1a56066f843934f9a57a.jpg",
     "index.html": "/react-pool-app/index.html",
-    "main.d0ce716e.css.map": "/react-pool-app/static/css/main.d0ce716e.css.map",
-    "main.286bb98d.js.map": "/react-pool-app/static/js/main.286bb98d.js.map",
+    "main.e028e16b.css.map": "/react-pool-app/static/css/main.e028e16b.css.map",
+    "main.b3c8d42e.js.map": "/react-pool-app/static/js/main.b3c8d42e.js.map",
     "592.7a291b6e.chunk.js.map": "/react-pool-app/static/js/592.7a291b6e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0ce716e.css",
-    "static/js/main.286bb98d.js"
+    "static/css/main.e028e16b.css",
+    "static/js/main.b3c8d42e.js"
   ]
 }
