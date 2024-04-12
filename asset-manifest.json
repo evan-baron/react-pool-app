@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-pool-app/static/css/main.252aa263.css",
+    "main.css": "/react-pool-app/static/css/main.062b168b.css",
     "main.js": "/react-pool-app/static/js/main.b80e1d0f.js",
     "static/js/592.7a291b6e.chunk.js": "/react-pool-app/static/js/592.7a291b6e.chunk.js",
     "static/media/pool-background.jpg": "/react-pool-app/static/media/pool-background.1a56066f843934f9a57a.jpg",
     "index.html": "/react-pool-app/index.html",
-    "main.252aa263.css.map": "/react-pool-app/static/css/main.252aa263.css.map",
+    "main.062b168b.css.map": "/react-pool-app/static/css/main.062b168b.css.map",
     "main.b80e1d0f.js.map": "/react-pool-app/static/js/main.b80e1d0f.js.map",
     "592.7a291b6e.chunk.js.map": "/react-pool-app/static/js/592.7a291b6e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.252aa263.css",
+    "static/css/main.062b168b.css",
     "static/js/main.b80e1d0f.js"
   ]
 }
