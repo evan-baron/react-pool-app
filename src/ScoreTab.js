@@ -4,7 +4,7 @@ import { ScoreCard } from './ScoreCard';
 import { currentGame } from './GameTab';
 import { TotalScoreTab } from './TotalScoreTab';
 
-export function ScoreTab() {
+export function ScoreTab({ handleTabClick }) {
     const [totalVisible, setTotalVisible] = useState(false);
 
     function finishGame() {
@@ -21,7 +21,10 @@ export function ScoreTab() {
                 }
             </ul>
             {totalVisible && <TotalScoreTab finishGame={finishGame} />}
-            {currentGame.length > 0 && playersData.length > 0 ? <div className="btn finishGame" onClick={finishGame}>Finish</div> : null}
+            <div class="scoreBtns">
+                <div className="btn changeGame" onClick={() => handleTabClick('game')}>Change Game</div>
+                <div className="btn finishGame" onClick={finishGame}>Finish</div>
+            </div>
         </div>
     )
 }
